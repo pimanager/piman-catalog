@@ -1,0 +1,11 @@
+title: "ownCloud"
+description: "A secure and customizable cloud storage platform to sync and share your files, calendars, contacts, and documents."
+version: "10.14.0"
+categories:
+  - Storage
+  - Productivity
+  - Collaboration
+icon: "☁️"
+required_ports:
+  - "8081:8080"
+min_ram_mb: 1024

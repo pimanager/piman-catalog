@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  onlyoffice:
+    container_name: onlyoffice_server
+    image: onlyoffice/documentserver:latest
+    ports:
+      - '8082:80'
+    volumes:
+      - ./data/onlyoffice/logs:/var/log/onlyoffice
+      - ./data/onlyoffice/data:/var/www/onlyoffice/Data
+      - ./data/onlyoffice/lib:/var/lib/onlyoffice
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=onlyoffice_jwt_secret_piman
+    restart: unless-stopped

@@ -1,0 +1,11 @@
+title: "OnlyOffice Document Server"
+description: "An online office suite comprising viewers and editors for text documents, spreadsheets, and presentations, highly compatible with MS Office formats."
+version: "8.0.1"
+categories:
+  - Productivity
+  - Collaboration
+  - Office
+icon: "📝"
+required_ports:
+  - "8082:80"
+min_ram_mb: 2048
