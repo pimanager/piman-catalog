@@ -1,0 +1,5 @@
+deployments:
+  - node: pi5
+    app: webapp
+  - node: pi5
+    app: nginx

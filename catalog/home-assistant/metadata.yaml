@@ -1,0 +1,11 @@
+title: "Home Assistant"
+description: "Open source home automation that puts local control and privacy first."
+version: "2024.5.0"
+categories:
+  - Utility
+  - Smart Home
+  - IoT
+icon: "🏠"
+required_ports:
+  - "8123:8123"
+min_ram_mb: 1024

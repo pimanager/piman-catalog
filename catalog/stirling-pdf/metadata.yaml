@@ -1,0 +1,11 @@
+title: "Stirling PDF"
+description: "A robust, locally hosted web-based PDF manipulation tool that allows you to split, merge, convert, reorder, and secure PDFs."
+version: "0.20.0"
+categories:
+  - Utility
+  - Productivity
+  - PDF
+icon: "📄"
+required_ports:
+  - "8089:8080"
+min_ram_mb: 512

@@ -1,0 +1,10 @@
+title: "VS Code Server"
+description: "Run VS Code on any machine and access it directly through your web browser."
+version: "4.23.0"
+categories:
+  - Utility
+  - Development
+icon: "💻"
+required_ports:
+  - "8443:8443"
+min_ram_mb: 1024

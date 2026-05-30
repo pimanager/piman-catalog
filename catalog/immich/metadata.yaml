@@ -1,0 +1,11 @@
+title: "Immich"
+description: "High performance self-hosted photo and video backup solution directly from your mobile phone or browser."
+version: "v1.104.0"
+categories:
+  - Media
+  - Storage
+  - Photos
+icon: "🖼️"
+required_ports:
+  - "2283:2283"
+min_ram_mb: 2048

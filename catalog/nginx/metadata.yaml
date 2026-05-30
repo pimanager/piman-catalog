@@ -1,0 +1,3 @@
+title: "Nginx Web Server"
+description: "A high-performance HTTP server, reverse proxy, and load balancer."
+version: "1.25.0"

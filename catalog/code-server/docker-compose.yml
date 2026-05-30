@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PASSWORD=pimanpassword # Default credentials
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - ./data/code-server/config:/config
+    ports:
+      - '8443:8443'
+    restart: unless-stopped

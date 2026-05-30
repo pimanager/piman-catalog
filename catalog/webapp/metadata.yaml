@@ -1,0 +1,3 @@
+title: "Webapp"
+description: "A lightweight nginx alpine server that acts as a simple demo web app."
+version: "1.0.0"

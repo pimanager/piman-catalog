@@ -1,0 +1,6 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: nginx-web
+    ports:
+      - "80:80"

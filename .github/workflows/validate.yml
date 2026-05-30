@@ -1,0 +1,48 @@
+name: Validate Compose Templates
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose-v2
+
+      - name: Validate YAML and Compose Syntax
+        run: |
+          failed=0
+          for dir in catalog/*/; do
+            if [ -d "$dir" ]; then
+              app=$(basename "$dir")
+              echo "Validating application: $app"
+              
+              # 1. Check metadata.yaml exists
+              if [ ! -f "${dir}metadata.yaml" ]; then
+                echo "::error file=${dir}metadata.yaml::Missing metadata.yaml for $app"
+                failed=1
+              fi
+              
+              # 2. Check docker-compose.yml exists
+              if [ ! -f "${dir}docker-compose.yml" ]; then
+                echo "::error file=${dir}docker-compose.yml::Missing docker-compose.yml for $app"
+                failed=1
+              fi
+              
+              # 3. Validate docker compose syntax (using config dry-run)
+              if ! docker compose -f "${dir}docker-compose.yml" config --quiet; then
+                echo "::error file=${dir}docker-compose.yml::Docker compose validation failed for $app"
+                failed=1
+              fi
+            fi
+          done
+          exit $failed
